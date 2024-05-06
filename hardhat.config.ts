@@ -10,7 +10,8 @@ import "./tasks/lock";
 // Run 'npx hardhat vars setup' to see the list of variables that need to be set
 
 const mnemonic: string = vars.get("MNEMONIC");
-const infuraApiKey: string = vars.get("INFURA_API_KEY");
+//const infuraApiKey: string = vars.get("INFURA_API_KEY") || "test";
+const infuraApiKey: string = "unused.";
 
 const chainIds = {
   "arbitrum-mainnet": 42161,
@@ -78,13 +79,6 @@ const config: HardhatUserConfig = {
       },
       chainId: chainIds.hardhat,
     },
-    ganache: {
-      accounts: {
-        mnemonic,
-      },
-      chainId: chainIds.ganache,
-      url: "http://localhost:8545",
-    },
     arbitrum: getChainConfig("arbitrum-mainnet"),
     avalanche: getChainConfig("avalanche"),
     bsc: getChainConfig("bsc"),
@@ -101,7 +95,7 @@ const config: HardhatUserConfig = {
     tests: "./test",
   },
   solidity: {
-    version: "0.8.19",
+    version: "0.8.24",
     settings: {
       metadata: {
         // Not including the metadata hash
