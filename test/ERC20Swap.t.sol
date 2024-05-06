@@ -2,6 +2,8 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
+import {IPoolManager} from "uniswapv4/interfaces/IPoolManager.sol";
+import {PoolManager} from "uniswapv4/PoolManager.sol";
 import {ERC20Swap} from "../src/ERC20Swap.sol";
 
 contract ERC20SwapTest is Test {
@@ -10,18 +12,18 @@ contract ERC20SwapTest is Test {
     function setUp() public {
 
         IPoolManager manager = new PoolManager(500000);
-        counter = new ERC20Swap();
-        counter.setNumber(0);
+        erc20swap = new ERC20Swap(manager);
+//        erc20swap.setNumber(0);
 
     }
 
     function test_Increment() public {
-        counter.increment();
-        assertEq(counter.number(), 1);
+//        counter.increment();
+//        assertEq(counter.number(), 1);
     }
 
     function testFuzz_SetNumber(uint256 x) public {
-        counter.setNumber(x);
-        assertEq(counter.number(), x);
+//        counter.setNumber(x);
+//        assertEq(counter.number(), x);
     }
 }

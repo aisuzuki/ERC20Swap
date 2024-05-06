@@ -1,12 +1,12 @@
 pragma solidity ^0.8.24;
 
-import { CurrencyLibrary, Currency } from "./types/Currency.sol";
-import { IERC20Minimal } from "./interfaces/external/IERC20Minimal.sol";
-import { CurrencySettleTake } from "./libraries/CurrencySettleTake.sol";
-import { IUnlockCallback } from "./interfaces/callback/IUnlockCallback.sol";
-import { IPoolManager } from "./interfaces/IPoolManager.sol";
-import { BalanceDelta } from "./types/BalanceDelta.sol";
-import { PoolKey } from "./types/PoolKey.sol";
+import { CurrencyLibrary, Currency } from "uniswapv4/types/Currency.sol";
+import { IERC20Minimal } from "uniswapv4/interfaces/external/IERC20Minimal.sol";
+import { CurrencySettleTake } from "uniswapv4/libraries/CurrencySettleTake.sol";
+import { IUnlockCallback } from "uniswapv4/interfaces/callback/IUnlockCallback.sol";
+import { IPoolManager } from "uniswapv4/interfaces/IPoolManager.sol";
+import { BalanceDelta } from "uniswapv4/types/BalanceDelta.sol";
+import { PoolKey } from "uniswapv4/types/PoolKey.sol";
 import { IERC20 } from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import { SafeERC20 } from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
