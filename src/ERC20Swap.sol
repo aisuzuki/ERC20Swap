@@ -21,8 +21,6 @@ contract ERC20Swap is IUnlockCallback {
        manager = _manager; 
     }
 
-    error NoSwapOccurred();
-
     struct CallbackData {
         address sender;
         TestSettings testSettings;
